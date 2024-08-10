@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    background-image: url('./1po.png');
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.sign-up {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: #2149c2;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.content-wrapper {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.headline {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.go-button {
+    padding: 10px 20px;
+    background-color: #2149c2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.about-container {
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.815);
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-left h1 {
+    font-size: 28px;
+    color: #000000;
+    padding-right: 13px;
+    border-right: 5px solid #2149c2;
+    margin-right:23px;
+}
+
+.about-right h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: #2149c2;
+    margin-left:20px;
+    
+}
+
+.about-right p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000;
+    margin-left:20px;
+}
+
+.testimonials {
+    text-align: center;
+    background-color: #16288c;
+    padding: 50px 20px;
+    color: #fff;
+    height:200px;
+
+    
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-info h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+.contact-us {
+    background-color: #ffffff;
+    padding: 250px;
+    text-align: start;
+    
+}
+
+.contact-info h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #16288c;
+    text-align:start;
+    
+    
+}
+
+.contact-info h3 {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+    
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    max-height:500px;
+    
+}
+
+.contact-form label {
+    font-size: 16px;
+    color: #000000;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #2149c2;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333333;
+    padding: 50px 0;
+    color: #ffffff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-column form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.footer-column button[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #2149c2;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+}
