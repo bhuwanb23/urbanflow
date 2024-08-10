@@ -1,0 +1,171 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e1ecfd;
+}
+
+h1 {
+    color: rgb(23, 23, 67);
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 20%;
+    background: #f9f9f9;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px 0 0 10px;
+}
+
+.sidebar .profile-pic img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.sidebar .profile-name h2 {
+    margin: 0;
+    color: #333;
+}
+
+.sidebar .profile-name p {
+    color: #666;
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+    position: relative;
+    border-radius: 0 10px 10px 0;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.action-buttons button {
+    background: #215ece;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-buttons button i {
+    margin-right: 8px;
+}
+
+.action-buttons button:hover {
+    background: #215ece;
+}
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.settings-header h3 {
+    color: #2d3e97;
+    margin: 0; 
+}
+
+.navbar {
+    display: flex;
+    margin-right:530px; 
+}
+
+
+.navbar a {
+    color: #2d3e97;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+    padding: 5px 10px; 
+}
+
+
+.navbar a:hover {
+    color: #92a1ec;
+}
+
+
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background: #215ece;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+button:hover {
+    background: #587fc9;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}

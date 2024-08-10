@@ -65,6 +65,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 50px;
+    transform: scale(0.9);
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }

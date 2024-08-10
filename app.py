@@ -11,5 +11,9 @@ def home():
 def route():
     return render_template('route.html')
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

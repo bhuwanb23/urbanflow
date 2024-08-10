@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>UrbanFlow</h1>
+            <h2>Profile</h2>
+            <div class="profile-pic">
+                <img src="./gopi.avif" alt="Profile Picture" id="profile-img" />
+            </div>
+            <div class="profile-name">
+                <h2 id="display-name">Abinaya</h2>
+                <p id="display-email">User ID: 98676054678</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="action-buttons">
+                <button id="edit-profile">
+                    <i class="fas fa-edit"></i>Edit Profile
+                </button>
+            </div>
+            <div class="settings-header">
+                <h3>Personal</h3>
+                <nav class="navbar">
+                    <a href="#" id="favorites-link">
+                        <h3>Favorites</h3>
+                    </a>
+                    <a href="#" id="history-link">
+                        <h3>History</h3>
+                    </a>
+                </nav>
+            </div>
+            <div class="personal-settings">
+                <form id="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" placeholder="Enter your first name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" placeholder="Enter your last name" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email-id">Email</label>
+                            <input type="email" id="email-id" placeholder="Enter email id" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="text" id="phone-number" placeholder="Enter phone number" required />
+                        </div>
+                    </div>
+                    <div class="form-row center-button">
+                        <button type="submit">Save Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
