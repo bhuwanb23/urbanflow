@@ -12,6 +12,7 @@ body {
     background-size: cover;
     background-position: center;
     color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    background-image: url('./1po.png');
+    background-image: url('static\images\1po.png');
 }
 
 .navbar {
@@ -208,7 +209,8 @@ input[type="text"] {
 }
 .contact-us {
     background-color: #ffffff;
-    padding: 250px;
+    padding-top: 100px;
+    margin: 100px;
     text-align: start;
     
 }

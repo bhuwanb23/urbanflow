@@ -1,0 +1,101 @@
+ID,Number,r1,r2,r3,r4,r5,Starting time,Frequency,R5
+B001,1001,Ghaziabad,Karol Bagh,Janakpuri,Noida,Hauz Khas,06:00 AM,10,Lajpat Nagar
+B002,1001,Karol Bagh,Janakpuri,Noida,Lajpat Nagar,Patel Nagar,08:00 AM,15,Laxmi Nagar
+B003,1002,Janakpuri,Noida,Lajpat Nagar,Laxmi Nagar,Greater Noida,07:00 AM,5,Faridabad
+B004,1002,Noida,Lajpat Nagar,Laxmi Nagar,Faridabad,Faridabad,09:00 AM,20,Vasundhara
+B005,1003,Lajpat Nagar,Laxmi Nagar,Faridabad,Vasundhara,Pitampura,06:30 AM,10,Chhatarpur
+B006,1003,Laxmi Nagar,Faridabad,Vasundhara,Chhatarpur,Akshardham,08:30 AM,15,Paharganj
+B007,1004,Faridabad,Vasundhara,Chhatarpur,Paharganj,New Friends Colony,07:30 AM,30,Model Town
+B008,1004,Vasundhara,Chhatarpur,Paharganj,Model Town,Noida,09:30 AM,20,Palam
+B009,1005,Chhatarpur,Paharganj,Model Town,Palam,Jamia Nagar,08:00 AM,10,Connaught Place
+B010,1005,Paharganj,Model Town,Palam,Connaught Place,Malviya Nagar,10:00 AM,15,Lodhi Colony
+B011,1006,Model Town,Palam,Connaught Place,Lodhi Colony,Model Town,06:15 AM,30,Akshardham
+B012,1006,Palam,Connaught Place,Lodhi Colony,Akshardham,Mehrauli,08:15 AM,20,Mayur Vihar
+B013,1007,Connaught Place,Lodhi Colony,Akshardham,Mayur Vihar,Greater Noida,07:00 AM,10,Greater Noida
+B014,1007,Lodhi Colony,Akshardham,Mayur Vihar,Greater Noida,Jamia Nagar,09:00 AM,15,Defence Colony
+B015,1008,Akshardham,Mayur Vihar,Greater Noida,Defence Colony,Janakpuri,07:45 AM,30,Greater Kailash
+B016,1008,Mayur Vihar,Greater Noida,Defence Colony,Greater Kailash,Chhatarpur,09:45 AM,20,Hauz Khas
+B017,1009,Greater Noida,Defence Colony,Greater Kailash,Hauz Khas,Greater Kailash,06:30 AM,10,Tilak Nagar
+B018,1009,Defence Colony,Greater Kailash,Hauz Khas,Tilak Nagar,Jasola,08:30 AM,15,Najafgarh
+B019,1010,Greater Kailash,Hauz Khas,Tilak Nagar,Najafgarh,Connaught Place,07:00 AM,30,Dilshad Garden
+B020,1010,Hauz Khas,Tilak Nagar,Najafgarh,Dilshad Garden,Punjabi Bagh,09:00 AM,20,Sadar Bazaar
+B021,1011,Tilak Nagar,Najafgarh,Dilshad Garden,Sadar Bazaar,Sarita Vihar,06:45 AM,10,Malviya Nagar
+B022,1011,Najafgarh,Dilshad Garden,Sadar Bazaar,Malviya Nagar,Ghaziabad,08:45 AM,15,Mehrauli
+B023,1012,Dilshad Garden,Sadar Bazaar,Malviya Nagar,Mehrauli,Gurgaon,07:15 AM,30,Badarpur
+B024,1012,Sadar Bazaar,Malviya Nagar,Mehrauli,Badarpur,Sarita Vihar,09:15 AM,20,New Friends Colony
+B025,1013,Malviya Nagar,Mehrauli,Badarpur,New Friends Colony,Badarpur,07:30 AM,10,Paschim Vihar
+B026,1013,Mehrauli,Badarpur,New Friends Colony,Paschim Vihar,Jamia Nagar,09:30 AM,15,Vasant Kunj
+B027,1014,Badarpur,New Friends Colony,Paschim Vihar,Vasant Kunj,Shahdara,08:00 AM,30,Jasola
+B028,1014,New Friends Colony,Paschim Vihar,Vasant Kunj,Jasola,Hauz Khas,10:00 AM,20,Ashok Vihar
+B029,1015,Paschim Vihar,Vasant Kunj,Jasola,Ashok Vihar,Ashok Vihar,06:00 AM,10,Rohini
+B030,1015,Vasant Kunj,Jasola,Ashok Vihar,Rohini,Mehrauli,08:00 AM,15,Patel Nagar
+B031,1016,Jasola,Ashok Vihar,Rohini,Patel Nagar,Palam,07:00 AM,30,Dwarka
+B032,1016,Ashok Vihar,Rohini,Patel Nagar,Dwarka,Rajouri Garden,09:00 AM,20,Vikaspuri
+B033,1017,Rohini,Patel Nagar,Dwarka,Vikaspuri,Chhatarpur,07:30 AM,10,Ramesh Nagar
+B034,1017,Patel Nagar,Dwarka,Vikaspuri,Ramesh Nagar,Badarpur,09:30 AM,15,Uttam Nagar
+B035,1018,Dwarka,Vikaspuri,Ramesh Nagar,Uttam Nagar,Jamia Nagar,08:00 AM,30,Punjabi Bagh
+B036,1018,Vikaspuri,Ramesh Nagar,Uttam Nagar,Punjabi Bagh,Karol Bagh,10:00 AM,20,Saket
+B037,1019,Ramesh Nagar,Uttam Nagar,Punjabi Bagh,Saket,Najafgarh,06:30 AM,10,Gurgaon
+B038,1019,Uttam Nagar,Punjabi Bagh,Saket,Gurgaon,Paschim Vihar,08:30 AM,15,Chandni Chowk
+B039,1020,Punjabi Bagh,Saket,Gurgaon,Chandni Chowk,Jamia Nagar,07:15 AM,30,Shahdara
+B040,1020,Saket,Gurgaon,Chandni Chowk,Shahdara,Greater Kailash,09:15 AM,20,Sarita Vihar
+B041,1021,Gurgaon,Chandni Chowk,Shahdara,Sarita Vihar,Paschim Vihar,08:00 AM,10,Jamia Nagar
+B042,1021,Chandni Chowk,Shahdara,Sarita Vihar,Jamia Nagar,Lajpat Nagar,10:00 AM,15,Rajouri Garden
+B043,1022,Shahdara,Sarita Vihar,Jamia Nagar,Rajouri Garden,Rajouri Garden,07:00 AM,30,Preet Vihar
+B044,1022,Sarita Vihar,Jamia Nagar,Rajouri Garden,Preet Vihar,Lajpat Nagar,09:00 AM,20,Pitampura
+B045,1023,Jamia Nagar,Rajouri Garden,Preet Vihar,Pitampura,Najafgarh,06:45 AM,10,Ghaziabad
+B046,1023,Rajouri Garden,Preet Vihar,Pitampura,Ghaziabad,Pitampura,08:45 AM,15,Karol Bagh
+B047,1024,Preet Vihar,Pitampura,Ghaziabad,Karol Bagh,Karol Bagh,07:30 AM,30,Janakpuri
+B048,1024,Pitampura,Ghaziabad,Karol Bagh,Janakpuri,Janakpuri,09:30 AM,20,Noida
+B049,1025,Ghaziabad,Karol Bagh,Janakpuri,Noida,Laxmi Nagar,06:30 AM,10,Lajpat Nagar
+B050,1025,Karol Bagh,Janakpuri,Noida,Lajpat Nagar,Jasola,08:30 AM,15,Laxmi Nagar
+B051,1026,Janakpuri,Noida,Lajpat Nagar,Laxmi Nagar,Badarpur,07:00 AM,30,Faridabad
+B052,1026,Noida,Lajpat Nagar,Laxmi Nagar,Faridabad,Malviya Nagar,09:00 AM,20,Vasundhara
+B053,1027,Lajpat Nagar,Laxmi Nagar,Faridabad,Vasundhara,Model Town,08:00 AM,10,Chhatarpur
+B054,1027,Laxmi Nagar,Faridabad,Vasundhara,Chhatarpur,Saket,10:00 AM,15,Paharganj
+B055,1028,Faridabad,Vasundhara,Chhatarpur,Paharganj,Vasundhara,07:15 AM,30,Model Town
+B056,1028,Vasundhara,Chhatarpur,Paharganj,Model Town,Ashok Vihar,09:15 AM,20,Palam
+B057,1029,Chhatarpur,Paharganj,Model Town,Palam,Noida,07:30 AM,10,Connaught Place
+B058,1029,Paharganj,Model Town,Palam,Connaught Place,Dwarka,09:30 AM,15,Lodhi Colony
+B059,1030,Model Town,Palam,Connaught Place,Lodhi Colony,Lodhi Colony,06:00 AM,30,Akshardham
+B060,1030,Palam,Connaught Place,Lodhi Colony,Akshardham,Ramesh Nagar,08:00 AM,20,Mayur Vihar
+B061,1031,Connaught Place,Lodhi Colony,Akshardham,Mayur Vihar,Paschim Vihar,07:00 AM,10,Greater Noida
+B062,1031,Lodhi Colony,Akshardham,Mayur Vihar,Greater Noida,Palam,09:00 AM,15,Defence Colony
+B063,1032,Akshardham,Mayur Vihar,Greater Noida,Defence Colony,Punjabi Bagh,06:30 AM,30,Greater Kailash
+B064,1032,Mayur Vihar,Greater Noida,Defence Colony,Greater Kailash,Model Town,08:30 AM,20,Hauz Khas
+B065,1033,Greater Noida,Defence Colony,Greater Kailash,Hauz Khas,Defence Colony,07:45 AM,15,Tilak Nagar
+B066,1033,Defence Colony,Greater Kailash,Hauz Khas,Tilak Nagar,Punjabi Bagh,09:45 AM,15,Najafgarh
+B067,1034,Greater Kailash,Hauz Khas,Tilak Nagar,Najafgarh,Faridabad,07:00 AM,30,Dilshad Garden
+B068,1034,Hauz Khas,Tilak Nagar,Najafgarh,Dilshad Garden,Gurgaon,09:00 AM,20,Sadar Bazaar
+B069,1035,Tilak Nagar,Najafgarh,Dilshad Garden,Sadar Bazaar,Najafgarh,08:00 AM,10,Malviya Nagar
+B070,1035,Najafgarh,Dilshad Garden,Sadar Bazaar,Malviya Nagar,Noida,10:00 AM,15,Mehrauli
+B071,1036,Dilshad Garden,Sadar Bazaar,Malviya Nagar,Mehrauli,Uttam Nagar,06:15 AM,35,Badarpur
+B072,1036,Sadar Bazaar,Malviya Nagar,Mehrauli,Badarpur,Mayur Vihar,08:15 AM,20,New Friends Colony
+B073,1037,Malviya Nagar,Mehrauli,Badarpur,New Friends Colony,Greater Kailash,07:30 AM,10,Paschim Vihar
+B074,1037,Mehrauli,Badarpur,New Friends Colony,Paschim Vihar,Saket,09:30 AM,15,Vasant Kunj
+B075,1038,Badarpur,New Friends Colony,Paschim Vihar,Vasant Kunj,Jasola,06:45 AM,30,Jasola
+B076,1038,New Friends Colony,Paschim Vihar,Vasant Kunj,Jasola,Badarpur,08:45 AM,20,Ashok Vihar
+B077,1039,Paschim Vihar,Vasant Kunj,Jasola,Ashok Vihar,Lajpat Nagar,07:00 AM,10,Rohini
+B078,1039,Vasant Kunj,Jasola,Ashok Vihar,Rohini,Punjabi Bagh,09:00 AM,15,Patel Nagar
+B079,1040,Jasola,Ashok Vihar,Rohini,Patel Nagar,Tilak Nagar,08:00 AM,30,Dwarka
+B080,1040,Ashok Vihar,Rohini,Patel Nagar,Dwarka,Rajouri Garden,10:00 AM,20,Vikaspuri
+B081,1041,Rohini,Patel Nagar,Dwarka,Vikaspuri,Jasola,07:30 AM,10,Ramesh Nagar
+B082,1041,Patel Nagar,Dwarka,Vikaspuri,Ramesh Nagar,Patel Nagar,09:30 AM,15,Uttam Nagar
+B083,1042,Dwarka,Vikaspuri,Ramesh Nagar,Uttam Nagar,Jasola,07:15 AM,30,Punjabi Bagh
+B084,1042,Vikaspuri,Ramesh Nagar,Uttam Nagar,Punjabi Bagh,Dwarka,09:15 AM,20,Saket
+B085,1043,Ramesh Nagar,Uttam Nagar,Punjabi Bagh,Saket,Malviya Nagar,07:00 AM,40,Gurgaon
+B086,1043,Uttam Nagar,Punjabi Bagh,Saket,Gurgaon,Mayur Vihar,09:00 AM,15,Chandni Chowk
+B087,1044,Punjabi Bagh,Saket,Gurgaon,Chandni Chowk,Dwarka,08:30 AM,30,Shahdara
+B088,1044,Saket,Gurgaon,Chandni Chowk,Shahdara,Janakpuri,10:30 AM,20,Sarita Vihar
+B089,1045,Gurgaon,Chandni Chowk,Shahdara,Sarita Vihar,Ashok Vihar,06:00 AM,10,Jamia Nagar
+B090,1045,Chandni Chowk,Shahdara,Sarita Vihar,Jamia Nagar,Sadar Bazaar,08:00 AM,15,Rajouri Garden
+B091,1046,Shahdara,Sarita Vihar,Jamia Nagar,Rajouri Garden,Akshardham,07:15 AM,30,Preet Vihar
+B092,1046,Sarita Vihar,Jamia Nagar,Rajouri Garden,Preet Vihar,Rohini,09:15 AM,20,Pitampura
+B093,1047,Jamia Nagar,Rajouri Garden,Preet Vihar,Pitampura,Karol Bagh,06:45 AM,10,Ghaziabad
+B094,1047,Rajouri Garden,Preet Vihar,Pitampura,Ghaziabad,Badarpur,08:45 AM,5,Karol Bagh
+B095,1048,Preet Vihar,Pitampura,Ghaziabad,Karol Bagh,Najafgarh,07:30 AM,30,Janakpuri
+B096,1048,Pitampura,Ghaziabad,Karol Bagh,Janakpuri,Tilak Nagar,09:30 AM,20,Noida
+B097,1049,Ghaziabad,Karol Bagh,Janakpuri,Noida,Dwarka,07:00 AM,10,Lajpat Nagar
+B098,1049,Karol Bagh,Janakpuri,Noida,Lajpat Nagar,Pitampura,09:00 AM,15,Laxmi Nagar
+B099,1050,Janakpuri,Noida,Lajpat Nagar,Laxmi Nagar,Ashok Vihar,08:00 AM,30,Faridabad
+B100,1050,Noida,Lajpat Nagar,Laxmi Nagar,Faridabad,Najafgarh,10:00 AM,20,Vasundhara

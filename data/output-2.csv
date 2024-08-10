@@ -1,0 +1,101 @@
+ID,Number,r1,r2,r3,r4,r5,Starting time,Frequency
+B001,1001,Connaught Place,Karol Bagh,Paharganj,Rajouri Garden,Defence Colony,06:00 AM,10
+B002,1001,Connaught Place,Karol Bagh,Paharganj,Rajouri Garden,Defence Colony,08:00 AM,15
+B003,1002,Karol Bagh,Paharganj,Rajouri Garden,Defence Colony,Mayur Vihar,07:00 AM,5
+B004,1002,Karol Bagh,Paharganj,Rajouri Garden,Defence Colony,Mayur Vihar,09:00 AM,20
+B005,1003,Paharganj,Rajouri Garden,Defence Colony,Patel Nagar,Vasant Vihar,06:30 AM,10
+B006,1003,Paharganj,Rajouri Garden,Defence Colony,Patel Nagar,Vasant Vihar,08:30 AM,15
+B007,1004,Rajouri Garden,Defence Colony,Patel Nagar,Hauz Khas,Rohini,07:30 AM,30
+B008,1004,Rajouri Garden,Defence Colony,Patel Nagar,Hauz Khas,Rohini,09:30 AM,20
+B009,1005,Defence Colony,Patel Nagar,Hauz Khas,South Extension,Dwarka,08:00 AM,10
+B010,1005,Defence Colony,Patel Nagar,Hauz Khas,South Extension,Dwarka,10:00 AM,15
+B011,1006,Patel Nagar,Hauz Khas,Saket,Janakpuri,South Extension,06:15 AM,30
+B012,1006,Patel Nagar,Hauz Khas,Saket,Janakpuri,South Extension,08:15 AM,20
+B013,1007,Hauz Khas,Saket,Rohini,Mayur Vihar,South Extension,07:00 AM,10
+B014,1007,Hauz Khas,Saket,Rohini,Mayur Vihar,South Extension,09:00 AM,15
+B015,1008,Saket,Rohini,Mayur Vihar,Vasant Vihar,Janakpuri,07:45 AM,30
+B016,1008,Saket,Rohini,Mayur Vihar,Vasant Vihar,Janakpuri,09:45 AM,20
+B017,1009,Rohini,Mayur Vihar,South Extension,Dwarka,Saket,06:30 AM,10
+B018,1009,Rohini,Mayur Vihar,South Extension,Dwarka,Saket,08:30 AM,15
+B019,1010,Mayur Vihar,South Extension,Dwarka,Defence Colony,Patel Nagar,07:00 AM,30
+B020,1010,Mayur Vihar,South Extension,Dwarka,Defence Colony,Patel Nagar,09:00 AM,20
+B021,1011,South Extension,Dwarka,Saket,Connaught Place,Karol Bagh,06:45 AM,10
+B022,1011,South Extension,Dwarka,Saket,Connaught Place,Karol Bagh,08:45 AM,15
+B023,1012,Dwarka,Saket,Janakpuri,Hauz Khas,Defence Colony,07:15 AM,30
+B024,1012,Dwarka,Saket,Janakpuri,Hauz Khas,Defence Colony,09:15 AM,20
+B025,1013,Saket,Janakpuri,Hauz Khas,Rohini,South Extension,07:30 AM,10
+B026,1013,Saket,Janakpuri,Hauz Khas,Rohini,South Extension,09:30 AM,15
+B027,1014,Janakpuri,Hauz Khas,Rohini,Defence Colony,South Extension,08:00 AM,30
+B028,1014,Janakpuri,Hauz Khas,Rohini,Defence Colony,South Extension,10:00 AM,20
+B029,1015,Connaught Place,Karol Bagh,Vasant Vihar,Patel Nagar,Dwarka,06:00 AM,10
+B030,1015,Connaught Place,Karol Bagh,Vasant Vihar,Patel Nagar,Dwarka,08:00 AM,15
+B031,1016,Karol Bagh,Vasant Vihar,Patel Nagar,Saket,Mayur Vihar,07:00 AM,30
+B032,1016,Karol Bagh,Vasant Vihar,Patel Nagar,Saket,Mayur Vihar,09:00 AM,20
+B033,1017,Vasant Vihar,Patel Nagar,Hauz Khas,South Extension,Rohini,07:30 AM,10
+B034,1017,Vasant Vihar,Patel Nagar,Hauz Khas,South Extension,Rohini,09:30 AM,15
+B035,1018,Patel Nagar,Hauz Khas,Saket,Dwarka,Defence Colony,08:00 AM,30
+B036,1018,Patel Nagar,Hauz Khas,Saket,Dwarka,Defence Colony,10:00 AM,20
+B037,1019,Hauz Khas,Saket,Rohini,Janakpuri,Vasant Vihar,06:30 AM,10
+B038,1019,Hauz Khas,Saket,Rohini,Janakpuri,Vasant Vihar,08:30 AM,15
+B039,1020,Saket,Rohini,Janakpuri,Mayur Vihar,South Extension,07:15 AM,30
+B040,1020,Saket,Rohini,Janakpuri,Mayur Vihar,South Extension,09:15 AM,20
+B041,1021,Rohini,Janakpuri,Mayur Vihar,South Extension,Defence Colony,08:00 AM,10
+B042,1021,Rohini,Janakpuri,Mayur Vihar,South Extension,Defence Colony,10:00 AM,15
+B043,1022,Janakpuri,Mayur Vihar,South Extension,Dwarka,Saket,07:00 AM,30
+B044,1022,Janakpuri,Mayur Vihar,South Extension,Dwarka,Saket,09:00 AM,20
+B045,1023,Mayur Vihar,South Extension,Dwarka,Defence Colony,Connaught Place,06:45 AM,10
+B046,1023,Mayur Vihar,South Extension,Dwarka,Defence Colony,Connaught Place,08:45 AM,15
+B047,1024,South Extension,Dwarka,Defence Colony,Patel Nagar,Hauz Khas,07:30 AM,30
+B048,1024,South Extension,Dwarka,Defence Colony,Patel Nagar,Hauz Khas,09:30 AM,20
+B049,1025,Dwarka,Defence Colony,Patel Nagar,Saket,Mayur Vihar,06:30 AM,10
+B050,1025,Dwarka,Defence Colony,Patel Nagar,Saket,Mayur Vihar,08:30 AM,15
+B051,1026,Defence Colony,Patel Nagar,Saket,Hauz Khas,Rohini,07:00 AM,30
+B052,1026,Defence Colony,Patel Nagar,Saket,Hauz Khas,Rohini,09:00 AM,20
+B053,1027,Patel Nagar,Saket,Mayur Vihar,South Extension,Vasant Vihar,08:00 AM,10
+B054,1027,Patel Nagar,Saket,Mayur Vihar,South Extension,Vasant Vihar,10:00 AM,15
+B055,1028,Saket,Mayur Vihar,South Extension,Defence Colony,Janakpuri,07:15 AM,30
+B056,1028,Saket,Mayur Vihar,South Extension,Defence Colony,Janakpuri,09:15 AM,20
+B057,1029,Mayur Vihar,South Extension,Defence Colony,Patel Nagar,Dwarka,07:30 AM,10
+B058,1029,Mayur Vihar,South Extension,Defence Colony,Patel Nagar,Dwarka,09:30 AM,15
+B059,1030,South Extension,Defence Colony,Patel Nagar,Hauz Khas,Rohini,06:00 AM,30
+B060,1030,South Extension,Defence Colony,Patel Nagar,Hauz Khas,Rohini,08:00 AM,20
+B061,1031,Defence Colony,Patel Nagar,Hauz Khas,Saket,Vasant Vihar,07:00 AM,10
+B062,1031,Defence Colony,Patel Nagar,Hauz Khas,Saket,Vasant Vihar,09:00 AM,15
+B063,1032,Patel Nagar,Hauz Khas,Saket,Rohini,South Extension,06:30 AM,30
+B064,1032,Patel Nagar,Hauz Khas,Saket,Rohini,South Extension,08:30 AM,20
+B065,1033,Hauz Khas,Saket,Rohini,Mayur Vihar,Defence Colony,07:45 AM,15
+B066,1033,Hauz Khas,Saket,Rohini,Mayur Vihar,Defence Colony,09:45 AM,15
+B067,1034,Saket,Rohini,Mayur Vihar,Janakpuri,South Extension,07:00 AM,30
+B068,1034,Saket,Rohini,Mayur Vihar,Janakpuri,South Extension,09:00 AM,20
+B069,1035,Rohini,Mayur Vihar,Janakpuri,South Extension,Defence Colony,08:00 AM,10
+B070,1035,Rohini,Mayur Vihar,Janakpuri,South Extension,Defence Colony,10:00 AM,15
+B071,1036,Mayur Vihar,Janakpuri,South Extension,Dwarka,Saket,06:15 AM,35
+B072,1036,Mayur Vihar,Janakpuri,South Extension,Dwarka,Saket,08:15 AM,20
+B073,1037,Janakpuri,South Extension,Dwarka,Defence Colony,Connaught Place,07:30 AM,10
+B074,1037,Janakpuri,South Extension,Dwarka,Defence Colony,Connaught Place,09:30 AM,15
+B075,1038,South Extension,Dwarka,Defence Colony,Patel Nagar,Saket,06:45 AM,30
+B076,1038,South Extension,Dwarka,Defence Colony,Patel Nagar,Saket,08:45 AM,20
+B077,1039,Dwarka,Defence Colony,Patel Nagar,Hauz Khas,Vasant Vihar,07:00 AM,10
+B078,1039,Dwarka,Defence Colony,Patel Nagar,Hauz Khas,Vasant Vihar,09:00 AM,15
+B079,1040,Defence Colony,Patel Nagar,Hauz Khas,Saket,South Extension,08:00 AM,30
+B080,1040,Defence Colony,Patel Nagar,Hauz Khas,Saket,South Extension,10:00 AM,20
+B081,1041,Patel Nagar,Hauz Khas,Saket,Rohini,Defence Colony,07:30 AM,10
+B082,1041,Patel Nagar,Hauz Khas,Saket,Rohini,Defence Colony,09:30 AM,15
+B083,1042,Hauz Khas,Saket,Rohini,Mayur Vihar,Janakpuri,07:15 AM,30
+B084,1042,Hauz Khas,Saket,Rohini,Mayur Vihar,Janakpuri,09:15 AM,20
+B085,1043,Saket,Rohini,Mayur Vihar,Janakpuri,South Extension,07:00 AM,10
+B086,1043,Saket,Rohini,Mayur Vihar,Janakpuri,South Extension,09:00 AM,15
+B087,1044,Rohini,Mayur Vihar,Janakpuri,South Extension,Defence Colony,08:30 AM,30
+B088,1044,Rohini,Mayur Vihar,Janakpuri,South Extension,Defence Colony,10:30 AM,20
+B089,1045,Mayur Vihar,Janakpuri,South Extension,Defence Colony,Dwarka,06:00 AM,10
+B090,1045,Mayur Vihar,Janakpuri,South Extension,Defence Colony,Dwarka,08:00 AM,15
+B091,1046,Janakpuri,South Extension,Defence Colony,Dwarka,Saket,07:15 AM,30
+B092,1046,Janakpuri,South Extension,Defence Colony,Dwarka,Saket,09:15 AM,20
+B093,1047,South Extension,Defence Colony,Dwarka,Patel Nagar,Hauz Khas,06:45 AM,10
+B094,1047,South Extension,Defence Colony,Dwarka,Patel Nagar,Hauz Khas,08:45 AM,5
+B095,1048,Defence Colony,Dwarka,Patel Nagar,Hauz Khas,Saket,07:30 AM,30
+B096,1048,Defence Colony,Dwarka,Patel Nagar,Hauz Khas,Saket,09:30 AM,20
+B097,1049,Dwarka,Patel Nagar,Hauz Khas,Saket,Rohini,07:00 AM,10
+B098,1049,Dwarka,Patel Nagar,Hauz Khas,Saket,Rohini,09:00 AM,15
+B099,1050,Patel Nagar,Hauz Khas,Saket,Defence Colony,South Extension,08:00 AM,30
+B100,1050,Patel Nagar,Hauz Khas,Saket,Defence Colony,South Extension,10:00 AM,20

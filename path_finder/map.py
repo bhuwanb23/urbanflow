@@ -40,7 +40,7 @@ def draw_graph(G):
     plt.show()
 
 def main():
-    file_path = 'data\chennai_cities.csv'  # Replace with your CSV file path
+    file_path = 'data\output.csv'  # Replace with your CSV file path
     df = read_csv(file_path)
     G = create_graph(df)
     draw_graph(G)
