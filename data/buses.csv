@@ -1,0 +1,101 @@
+ID,Number,Stops,Starting Time
+B001,1001,Kovur,Aminjikarai,Ayanavaram,Ambattur,Defence Colony,06:00 AM
+B002,1001,Kovur,Aminjikarai,Ayanavaram,Ambattur,Defence Colony,08:00 AM
+B003,1002,Aminjikarai,Ayanavaram,Ambattur,Defence Colony,K.K. Nagar,07:00 AM
+B004,1002,Aminjikarai,Ayanavaram,Ambattur,Defence Colony,K.K. Nagar,09:00 AM
+B005,1003,Ayanavaram,Ambattur,Defence Colony,Padi,Ayappakkam,06:30 AM
+B006,1003,Ayanavaram,Ambattur,Defence Colony,Padi,Ayappakkam,08:30 AM
+B007,1004,Ambattur,Defence Colony,Padi,Koyambedu,Maduravoyal,07:30 AM
+B008,1004,Ambattur,Defence Colony,Padi,Koyambedu,Maduravoyal,09:30 AM
+B009,1005,Defence Colony,Padi,Koyambedu,Arumbakkam,Mogappair,08:00 AM
+B010,1005,Defence Colony,Padi,Koyambedu,Arumbakkam,Mogappair,10:00 AM
+B011,1006,Padi,Koyambedu,Avadi,Pudur,Arumbakkam,06:15 AM
+B012,1006,Padi,Koyambedu,Avadi,Pudur,Arumbakkam,08:15 AM
+B013,1007,Koyambedu,Avadi,Maduravoyal,K.K. Nagar,Arumbakkam,07:00 AM
+B014,1007,Koyambedu,Avadi,Maduravoyal,K.K. Nagar,Arumbakkam,09:00 AM
+B015,1008,Avadi,Maduravoyal,K.K. Nagar,Ayappakkam,Pudur,07:45 AM
+B016,1008,Avadi,Maduravoyal,K.K. Nagar,Ayappakkam,Pudur,09:45 AM
+B017,1009,Maduravoyal,K.K. Nagar,Arumbakkam,Mogappair,Avadi,06:30 AM
+B018,1009,Maduravoyal,K.K. Nagar,Arumbakkam,Mogappair,Avadi,08:30 AM
+B019,1010,K.K. Nagar,Arumbakkam,Mogappair,Defence Colony,Padi,07:00 AM
+B020,1010,K.K. Nagar,Arumbakkam,Mogappair,Defence Colony,Padi,09:00 AM
+B021,1011,Arumbakkam,Mogappair,Avadi,Kovur,Aminjikarai,06:45 AM
+B022,1011,Arumbakkam,Mogappair,Avadi,Kovur,Aminjikarai,08:45 AM
+B023,1012,Mogappair,Avadi,Pudur,Koyambedu,Defence Colony,07:15 AM
+B024,1012,Mogappair,Avadi,Pudur,Koyambedu,Defence Colony,09:15 AM
+B025,1013,Avadi,Pudur,Koyambedu,Maduravoyal,Arumbakkam,07:30 AM
+B026,1013,Avadi,Pudur,Koyambedu,Maduravoyal,Arumbakkam,09:30 AM
+B027,1014,Pudur,Koyambedu,Maduravoyal,Defence Colony,Arumbakkam,08:00 AM
+B028,1014,Pudur,Koyambedu,Maduravoyal,Defence Colony,Arumbakkam,10:00 AM
+B029,1015,Kovur,Aminjikarai,Ayappakkam,Padi,Mogappair,06:00 AM
+B030,1015,Kovur,Aminjikarai,Ayappakkam,Padi,Mogappair,08:00 AM
+B031,1016,Aminjikarai,Ayappakkam,Padi,Avadi,K.K. Nagar,07:00 AM
+B032,1016,Aminjikarai,Ayappakkam,Padi,Avadi,K.K. Nagar,09:00 AM
+B033,1017,Ayappakkam,Padi,Koyambedu,Arumbakkam,Maduravoyal,07:30 AM
+B034,1017,Ayappakkam,Padi,Koyambedu,Arumbakkam,Maduravoyal,09:30 AM
+B035,1018,Padi,Koyambedu,Avadi,Mogappair,Defence Colony,08:00 AM
+B036,1018,Padi,Koyambedu,Avadi,Mogappair,Defence Colony,10:00 AM
+B037,1019,Koyambedu,Avadi,Maduravoyal,Pudur,Ayappakkam,06:30 AM
+B038,1019,Koyambedu,Avadi,Maduravoyal,Pudur,Ayappakkam,08:30 AM
+B039,1020,Avadi,Maduravoyal,Pudur,K.K. Nagar,Arumbakkam,07:15 AM
+B040,1020,Avadi,Maduravoyal,Pudur,K.K. Nagar,Arumbakkam,09:15 AM
+B041,1021,Maduravoyal,Pudur,K.K. Nagar,Arumbakkam,Defence Colony,08:00 AM
+B042,1021,Maduravoyal,Pudur,K.K. Nagar,Arumbakkam,Defence Colony,10:00 AM
+B043,1022,Pudur,K.K. Nagar,Arumbakkam,Mogappair,Avadi,07:00 AM
+B044,1022,Pudur,K.K. Nagar,Arumbakkam,Mogappair,Avadi,09:00 AM
+B045,1023,K.K. Nagar,Arumbakkam,Mogappair,Defence Colony,Kovur,06:45 AM
+B046,1023,K.K. Nagar,Arumbakkam,Mogappair,Defence Colony,Kovur,08:45 AM
+B047,1024,Arumbakkam,Mogappair,Defence Colony,Padi,Koyambedu,07:30 AM
+B048,1024,Arumbakkam,Mogappair,Defence Colony,Padi,Koyambedu,09:30 AM
+B049,1025,Mogappair,Defence Colony,Padi,Avadi,K.K. Nagar,06:30 AM
+B050,1025,Mogappair,Defence Colony,Padi,Avadi,K.K. Nagar,08:30 AM
+B051,1026,Defence Colony,Padi,Avadi,Koyambedu,Maduravoyal,07:00 AM
+B052,1026,Defence Colony,Padi,Avadi,Koyambedu,Maduravoyal,09:00 AM
+B053,1027,Padi,Avadi,K.K. Nagar,Arumbakkam,Ayappakkam,08:00 AM
+B054,1027,Padi,Avadi,K.K. Nagar,Arumbakkam,Ayappakkam,10:00 AM
+B055,1028,Avadi,K.K. Nagar,Arumbakkam,Defence Colony,Pudur,07:15 AM
+B056,1028,Avadi,K.K. Nagar,Arumbakkam,Defence Colony,Pudur,09:15 AM
+B057,1029,K.K. Nagar,Arumbakkam,Defence Colony,Padi,Mogappair,07:30 AM
+B058,1029,K.K. Nagar,Arumbakkam,Defence Colony,Padi,Mogappair,09:30 AM
+B059,1030,Arumbakkam,Defence Colony,Padi,Koyambedu,Maduravoyal,06:00 AM
+B060,1030,Arumbakkam,Defence Colony,Padi,Koyambedu,Maduravoyal,08:00 AM
+B061,1031,Defence Colony,Padi,Koyambedu,Avadi,Ayappakkam,07:00 AM
+B062,1031,Defence Colony,Padi,Koyambedu,Avadi,Ayappakkam,09:00 AM
+B063,1032,Padi,Koyambedu,Avadi,Maduravoyal,Arumbakkam,06:30 AM
+B064,1032,Padi,Koyambedu,Avadi,Maduravoyal,Arumbakkam,08:30 AM
+B065,1033,Koyambedu,Avadi,Maduravoyal,K.K. Nagar,Defence Colony,07:45 AM
+B066,1033,Koyambedu,Avadi,Maduravoyal,K.K. Nagar,Defence Colony,09:45 AM
+B067,1034,Avadi,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,07:00 AM
+B068,1034,Avadi,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,09:00 AM
+B069,1035,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,Defence Colony,08:00 AM
+B070,1035,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,Defence Colony,10:00 AM
+B071,1036,K.K. Nagar,Pudur,Arumbakkam,Mogappair,Avadi,06:15 AM
+B072,1036,K.K. Nagar,Pudur,Arumbakkam,Mogappair,Avadi,08:15 AM
+B073,1037,Pudur,Arumbakkam,Mogappair,Defence Colony,Kovur,07:30 AM
+B074,1037,Pudur,Arumbakkam,Mogappair,Defence Colony,Kovur,09:30 AM
+B075,1038,Arumbakkam,Mogappair,Defence Colony,Padi,Avadi,06:45 AM
+B076,1038,Arumbakkam,Mogappair,Defence Colony,Padi,Avadi,08:45 AM
+B077,1039,Mogappair,Defence Colony,Padi,Koyambedu,Ayappakkam,07:00 AM
+B078,1039,Mogappair,Defence Colony,Padi,Koyambedu,Ayappakkam,09:00 AM
+B079,1040,Defence Colony,Padi,Koyambedu,Avadi,Arumbakkam,08:00 AM
+B080,1040,Defence Colony,Padi,Koyambedu,Avadi,Arumbakkam,10:00 AM
+B081,1041,Padi,Koyambedu,Avadi,Maduravoyal,Defence Colony,07:30 AM
+B082,1041,Padi,Koyambedu,Avadi,Maduravoyal,Defence Colony,09:30 AM
+B083,1042,Koyambedu,Avadi,Maduravoyal,K.K. Nagar,Pudur,07:15 AM
+B084,1042,Koyambedu,Avadi,Maduravoyal,K.K. Nagar,Pudur,09:15 AM
+B085,1043,Avadi,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,07:00 AM
+B086,1043,Avadi,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,09:00 AM
+B087,1044,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,Defence Colony,08:30 AM
+B088,1044,Maduravoyal,K.K. Nagar,Pudur,Arumbakkam,Defence Colony,10:30 AM
+B089,1045,K.K. Nagar,Pudur,Arumbakkam,Defence Colony,Mogappair,06:00 AM
+B090,1045,K.K. Nagar,Pudur,Arumbakkam,Defence Colony,Mogappair,08:00 AM
+B091,1046,Pudur,Arumbakkam,Defence Colony,Mogappair,Avadi,07:15 AM
+B092,1046,Pudur,Arumbakkam,Defence Colony,Mogappair,Avadi,09:15 AM
+B093,1047,Arumbakkam,Defence Colony,Mogappair,Padi,Koyambedu,06:45 AM
+B094,1047,Arumbakkam,Defence Colony,Mogappair,Padi,Koyambedu,08:45 AM
+B095,1048,Defence Colony,Mogappair,Padi,Koyambedu,Avadi,07:30 AM
+B096,1048,Defence Colony,Mogappair,Padi,Koyambedu,Avadi,09:30 AM
+B097,1049,Mogappair,Padi,Koyambedu,Avadi,Maduravoyal,07:00 AM
+B098,1049,Mogappair,Padi,Koyambedu,Avadi,Maduravoyal,09:00 AM
+B099,1050,Padi,Koyambedu,Avadi,Defence Colony,Arumbakkam,08:00 AM
+B100,1050,Padi,Koyambedu,Avadi,Defence Colony,Arumbakkam,10:00 AM
