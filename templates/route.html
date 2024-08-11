@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,79 +25,88 @@
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <h1>Urbanflow</h1>
-        <nav>
-            <ul>
-                <a href="{{ url_for('home') }}">Home</a>
-                <a href="{{ url_for('route') }}">Routes</a>
-                <a href="{{ url_for('login') }}">Log In</a>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="left">
-            <div class="route">
-                <div class="login-box">
-                    <form action="/search" method="post">
-                        <div class="user-box">
-                            <input type="text" name="start" required>
-                            <label>Enter Start</label>
-                        </div>
-                        <div class="user-box">
-                            <input type="text" name="destination" required>
-                            <label>Enter Destination</label>
-                        </div>
-                        <button type="submit">Search</button>
-                    </form>
-                </div>
+<header>
+    <h1>Urbanflow</h1>
+    <nav>
+        <ul>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('route') }}">Routes</a>
+            <a href="{{ url_for('login') }}">Log In</a>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="left">
+        <div class="route">
+            <div class="login-box">
+                <form action="/search" method="post" id="search-form">
+                    <div class="user-box">
+                        <input type="text" id="start" name="start" required>
+                        <label>Enter Start</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" id="destination" name="destination" required>
+                        <label>Enter Destination</label>
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
             </div>
-            <!-- <div class="route-list">
-                {% if available_routes %}
-                {% for route in available_routes %}
-                <div class="routes">
-                    <div class="icons">2 Modes</div>
-                    <div class="time"></div>
-                    <div class="cost">$40</div>
-                </div>
-                <hr>
-                {% endfor %}
-                {% else %}
-                <p>No routes available.</p>
-                {% endif %}
-            </div> -->
         </div>
-        <div class="right">
-            <!-- <div class="options">
-                <div class="modes">
-                    Mode Details
-                </div>
-                <div class="time">
-                    Time
-                </div>
-                <div class="price">
-                    Price
-                </div>
-            </div>
-            <hr> -->
-            <!-- <pre style="font-size: large;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{ output }}</pre> -->
-            <h1>Route Details</h1>
-            {% if output %}
-                {% for line in output %}
-                    <p>{{ line }}</p>
-                {% endfor %}
-            {% else %}
-                <p>No details available.</p>
-            {% endif %}
-        </div>
-    </main>
-    <div class="chatbot">
-        <form action="chatbot" method="post"></form>
-        <button>START</button>
     </div>
-</body>
+    <div class="right">
+        <h1>Route Details</h1>
+        {% if output %}
+            {% for line in output %}
+                <p>{{ line }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No details available.</p>
+        {% endif %}
+    </div>
+</main>
+<div class="chatbot">
+    <button id="chatbot-start">START</button>
+</div>
 
+<script>
+    const startButton = document.getElementById('chatbot-start');
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.lang = 'en-US';
+
+    let currentStep = 'start';
+
+    function askUser(query) {
+        const utterance = new SpeechSynthesisUtterance(query);
+        window.speechSynthesis.speak(utterance);
+    }
+
+    function handleSpeechRecognitionResult(event) {
+        const transcript = event.results[0][0].transcript.toLowerCase();
+        if (currentStep === 'start') {
+            document.getElementById('start').value = transcript;
+            askUser('Please provide your destination.');
+            currentStep = 'destination';
+            recognition.start();
+        } else if (currentStep === 'destination') {
+            document.getElementById('destination').value = transcript;
+            document.getElementById('search-form').submit();
+        }
+    }
+
+    startButton.addEventListener('click', () => {
+        askUser('Please provide your starting point.');
+        recognition.start();
+    });
+
+    recognition.addEventListener('result', handleSpeechRecognitionResult);
+</script>
+
+</body>
 </html>
