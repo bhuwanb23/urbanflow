@@ -13,19 +13,76 @@ The application helps the user to reach their destination on time based on their
 - <b>Integration: </b>Combines public-transit as well as micro-mobility options offering the user multi-modal choices that have been seamlessly integrated into a single platform
 - <b>Models: </b>uses models like  nueral nets like LSTM  that helps to give an accurate preidction of the traffic based data available in correspondence to a particular location
 
-  <h3>An example of how user personalisation works:</h3>
+<h3>An example of how user personalisation works:</h3>
 
-  There are differnt methods to achieve the destination and the users have also been provided with the perspective of teh routes made avalable to them
+There are differnt methods to achieve the destination and the users have also been provided with the perspective of teh routes made avalable to them
 
 
   <img width="429" alt="Screenshot 2024-08-11 at 5 55 59 AM" src="https://github.com/user-attachments/assets/00ae75dc-f66c-40cb-8737-938e7d747c60">
 
+### 1. Clone the Repository
 
-  <h1>Flowchart</h1>
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/multimodal-mobility-system.git
+cd multimodal-mobility-system
+```
+
+### 2. Create a Virtual Environment
+
+Create and activate a virtual environment:
+
+```
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+# On Windows
+venv\Scripts\activate
+
+# On macOS and Linux
+source venv/bin/activate
+```
+### 3. Install Dependencies
+Install the required Python packages:
+
+```
+pip install -r requirements.txt
+```
+
+### 4. Set Up Environment Variables
+Create a .env file in the root directory. You can use the provided .env.example file as a reference. Add necessary environment variables:
+
+```
+# Example .env file contents
+FLASK_APP=app.py
+FLASK_ENV=development
+DATABASE_URL=sqlite:///database.db
+SECRET_KEY=your_secret_key
+```
+
+### 5. Initialize the Database
+Initialize the database schema:
+
+```
+# Run database migrations to set up the schema
+flask db upgrade
+```
+
+### 6. Run the Application
+Start the Flask development server:
+
+```
+python app.py
+```
+
+<h1>Flowchart</h1>
   
 <img width="1012" alt="Screenshot 2024-08-10 at 6 00 02 PM" src="https://github.com/user-attachments/assets/ed0d90a1-6d73-49cc-b673-376e2c7c9789">
 <h1>Use Case:</h1>
-- Daily Commuters: Enhances daily commute with
+
+- <b>Daily Commuters:</b> Enhances daily commute with
 personalized route planning, optimizing travel times and
 costs.
 
@@ -56,9 +113,9 @@ logistics, ensuring timely and efficient healthcare access.
 Educational Institutions: Manages student transportation,
 optimizing bus routes and schedules for school operations.
 
-
+## Images of the system
+## Login Page
 <img width="539" alt="Screenshot 2024-08-11 at 7 11 37 AM" src="https://github.com/user-attachments/assets/1434dcad-228a-4dfc-bb4a-21e350144064">
 
-
-
+## Home Page
 <img width="539" alt="Screenshot 2024-08-11 at 7 12 41 AM" src="https://github.com/user-attachments/assets/589bd1d0-6d7f-4e30-8596-380dc0bdf7c5">
