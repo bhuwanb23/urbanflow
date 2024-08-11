@@ -4,7 +4,6 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 import pandas as pd
 
-# Graph implementation using adjacency list
 class Graph:
     def __init__(self):
         self.graph = defaultdict(list)
@@ -36,7 +35,6 @@ class Graph:
                     
         return distances, shortest_paths[end]
 
-# Function to load the graph from the CSV traffic data
 def load_graph_from_csv(file_path):
     graph = Graph()
     travel_times = {}
@@ -51,13 +49,14 @@ def load_graph_from_csv(file_path):
             travel_times[(city2, city1)] = predicted_time_value  # Since it's an undirected graph
     return graph, travel_times
 
-# Function to find available buses along the shortest path
 def find_buses_for_path(path, buses, search_time, travel_times):
     available_buses = []
     total_travel_time = 0.0
 
     current_time = datetime.strptime(search_time, "%I:%M %p")
     
+    detailed_output = []
+
     for i in range(len(path) - 1):
         start, end = path[i], path[i + 1]
         travel_time = travel_times[(start, end)]
@@ -78,19 +77,17 @@ def find_buses_for_path(path, buses, search_time, travel_times):
                     while bus_start_time <= current_time:
                         bus_start_time += frequency
                     
-                    # Now, bus_start_time is the next available bus after current_time
                     if bus_start_time >= current_time:
                         waiting_time = (bus_start_time - current_time).total_seconds() / 60.0
                         total_travel_time += waiting_time + travel_time
 
-                        # Detailed print statements
-                        print(f"From {start} to {end}:")
-                        print(f"  Current time: {current_time.strftime('%I:%M %p')}")
-                        print(f"  Next bus ({bus['Number']}) at: {bus_start_time.strftime('%I:%M %p')}")
-                        print(f"  Waiting time: {waiting_time:.2f} mins")
-                        print(f"  Travel time: {travel_time:.2f} mins")
-                        print(f"  Arrival time at {end}: {(bus_start_time + timedelta(minutes=travel_time)).strftime('%I:%M %p')}")
-                        print(f"  -----------------------------")
+                        detailed_output.append(f"From {start} to {end}:")
+                        detailed_output.append(f"  Current time: {current_time.strftime('%I:%M %p')}")
+                        detailed_output.append(f"  Next bus ({bus['Number']}) at: {bus_start_time.strftime('%I:%M %p')}")
+                        detailed_output.append(f"  Waiting time: {waiting_time:.2f} mins")
+                        detailed_output.append(f"  Travel time: {travel_time:.2f} mins")
+                        detailed_output.append(f"  Arrival time at {end}: {(bus_start_time + timedelta(minutes=travel_time)).strftime('%I:%M %p')}")
+                        detailed_output.append(f"  -----------------------------")
 
                         available_buses.append(f"Bus {bus['Number']} from {start} to {end} at {bus_start_time.strftime('%I:%M %p')}")
                         
@@ -99,39 +96,38 @@ def find_buses_for_path(path, buses, search_time, travel_times):
                         break
         
         if not found_bus:
-            available_buses.append(f"No bus available from {start} to {end}, consider micro-mobility options.")
+            detailed_output.append(f"No bus available from {start} to {end}, consider micro-mobility options.")
             total_travel_time += travel_time
             current_time += timedelta(minutes=travel_time)  # Add micro-mobility time
-    
-    return available_buses, total_travel_time
+
+    # Return the necessary values
+    return available_buses, detailed_output, total_travel_time
 
 # Main function to simulate the entire process
-def main():
+def main(start, end, time):
     # Load bus data
     bus_data_path = "data/output-2.csv"
     bus_data = pd.read_csv(bus_data_path)
 
     # Sample start and end nodes
-    start_node = 'Defence Colony'
-    end_node = 'Hauz Khas'
+    start_node = start
+    end_node = end
     
     # Search time
-    search_time = "08:00 AM"
+    search_time = time
     
     # Load graph and find shortest path
     g, travel_times = load_graph_from_csv('data/output.csv')
     _, shortest_path = g.dijkstra(start_node, end_node)
     
     # Find available buses and calculate total time
-    available_buses, total_travel_time = find_buses_for_path(shortest_path, bus_data, search_time, travel_times)
+    available_buses, detailed_output, total_travel_time = find_buses_for_path(shortest_path, bus_data, search_time, travel_times)
     
-    # Display the result
-    print(f"\nThe shortest paths from {start_node} to {end_node} are:")
-    print(f"Path : {' -> '.join(shortest_path)}")
-    for bus in available_buses:
-        print(bus)
-    print(f"Total time: {total_travel_time:.2f} mins")
+    # Prepare the output
+    output = []
+    output.append(f"The shortest paths from {start_node} to {end_node} are:")
+    output.append(f"Path: {' -> '.join(shortest_path)}")
+    output.extend(detailed_output)
+    output.append(f"Total time: {total_travel_time:.2f} mins")
 
-# Run the main function
-if __name__ == "__main__":
-    main()
+    return available_buses, detailed_output, output
