@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Bus Route Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .logo i {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #00b4db;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 
+                20px 20px 40px rgba(0, 0, 0, 0.2),
+                -8px -8px 16px rgba(255, 255, 255, 0.1);
+        }
+
+        .locations-wrapper {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 40px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.2em;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .select2-container {
+            width: 100% !important;
+        }
+
+        .select2-container--default .select2-selection--single {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 12px;
+            height: 50px;
+            padding: 10px 45px;
+            color: white;
+            backdrop-filter: blur(5px);
+            box-shadow: 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.2),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: white;
+            line-height: 30px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 48px;
+            right: 10px;
+        }
+
+        .select2-dropdown {
+            background: rgba(30, 60, 114, 0.95);
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .select2-container--default .select2-results__option {
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background: rgba(0, 180, 219, 0.2);
+        }
+
+        .select2-search__field {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: none !important;
+            border-radius: 8px !important;
+            color: white !important;
+            padding: 8px 12px !important;
+        }
+
+        .select2-search__field::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 
+                5px 5px 10px rgba(0, 0, 0, 0.2),
+                -5px -5px 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        .time-group {
+            margin-bottom: 30px;
+        }
+
+        .time-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 8px 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 
+                inset 2px 2px 5px rgba(0, 0, 0, 0.2),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .time-inputs {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            flex: 1;
+        }
+
+        .time-inputs input[type="number"] {
+            width: 60px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.1em;
+            padding: 8px;
+            text-align: center;
+            -moz-appearance: textfield;
+        }
+
+        .time-inputs input[type="number"]::-webkit-outer-spin-button,
+        .time-inputs input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .time-separator {
+            color: white;
+            margin: 0 8px;
+            font-size: 1.2em;
+        }
+
+        #ampm {
+            background: rgba(0, 180, 219, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-left: 15px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        #ampm option {
+            background: #1e3c72;
+        }
+
+        .hidden-time-input {
+            display: none;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .time-inputs input[type="number"] {
+                width: 50px;
+                font-size: 1em;
+            }
+
+            #ampm {
+                padding: 8px;
+            }
+        }
+
+        .error-message {
+            background: rgba(255, 59, 48, 0.1);
+            color: #ff3b30;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 59, 48, 0.2);
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .error-highlight {
+            border: 1px solid rgba(255, 59, 48, 0.5) !important;
+            box-shadow: 0 0 0 2px rgba(255, 59, 48, 0.2) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-bus"></i>
+            <h1>Delhi Bus Route Finder</h1>
+            <p class="subtitle">Find the best bus routes in Delhi</p>
+        </div>
+        <div class="form-container">
+            <div id="error-message" class="error-message" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                Please choose different locations for source and destination
+            </div>
+            <form action="{{ url_for('find_route') }}" method="post" id="route-form" onsubmit="return validateForm()">
+                <div class="locations-wrapper">
+                    <div class="form-group">
+                        <label for="source">Source Location</label>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="source" name="source" required>
+                            <option value="">Select pickup location</option>
+                            {% for location in locations %}
+                            <option value="{{ location }}">{{ location }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="button" class="swap-button" onclick="swapLocations()">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <i class="fas fa-map-marker"></i>
+                        <select id="destination" name="destination" required>
+                            <option value="">Select drop location</option>
+                            {% for location in locations %}
+                            <option value="{{ location }}">{{ location }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group time-group">
+                    <label for="time">Preferred Time</label>
+                    <div class="time-input-wrapper">
+                        <i class="far fa-clock"></i>
+                        <div class="time-inputs">
+                            <input type="number" id="hours" name="hours" min="1" max="12" placeholder="HH" required
+                                   value="{{ default_time.split(':')[0] | int }}">
+                            <span class="time-separator">:</span>
+                            <input type="number" id="minutes" name="minutes" min="0" max="59" placeholder="MM" required
+                                   value="{{ default_time.split(':')[1] | int }}">
+                            <select id="ampm" name="ampm">
+                                <option value="AM" {% if default_time.split(':')[0] | int < 12 %}selected{% endif %}>AM</option>
+                                <option value="PM" {% if default_time.split(':')[0] | int >= 12 %}selected{% endif %}>PM</option>
+                            </select>
+                        </div>
+                        <input type="time" id="time" name="time" value="{{ default_time }}" class="hidden-time-input">
+                    </div>
+                </div>
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                    Find Routes
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#source').select2({
+                placeholder: "Select pickup location",
+                allowClear: true
+            });
+            
+            $('#destination').select2({
+                placeholder: "Select drop location",
+                allowClear: true
+            });
+        });
+
+        function swapLocations() {
+            const source = $('#source');
+            const destination = $('#destination');
+            const tempValue = source.val();
+            const tempText = source.select2('data')[0].text;
+            
+            source.val(destination.val()).trigger('change');
+            destination.val(tempValue).trigger('change');
+        }
+
+        // Time input handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const hoursInput = document.getElementById('hours');
+            const minutesInput = document.getElementById('minutes');
+            const ampmSelect = document.getElementById('ampm');
+            const hiddenTimeInput = document.getElementById('time');
+
+            function updateHiddenTimeInput() {
+                let hours = parseInt(hoursInput.value) || 0;
+                let minutes = parseInt(minutesInput.value) || 0;
+                const ampm = ampmSelect.value;
+
+                // Convert to 24-hour format
+                if (ampm === 'PM' && hours < 12) hours += 12;
+                if (ampm === 'AM' && hours === 12) hours = 0;
+
+                // Format hours and minutes with leading zeros
+                const formattedHours = hours.toString().padStart(2, '0');
+                const formattedMinutes = minutes.toString().padStart(2, '0');
+
+                hiddenTimeInput.value = `${formattedHours}:${formattedMinutes}`;
+            }
+
+            // Input validation and formatting
+            function formatTimeInput(input, max) {
+                let value = parseInt(input.value) || 0;
+                if (value < 0) value = 0;
+                if (value > max) value = max;
+                input.value = value;
+                updateHiddenTimeInput();
+            }
+
+            hoursInput.addEventListener('input', () => {
+                formatTimeInput(hoursInput, 12);
+            });
+
+            minutesInput.addEventListener('input', () => {
+                formatTimeInput(minutesInput, 59);
+            });
+
+            ampmSelect.addEventListener('change', updateHiddenTimeInput);
+
+            // Initialize with current values
+            updateHiddenTimeInput();
+        });
+
+        function validateForm() {
+            const source = document.getElementById('source').value;
+            const destination = document.getElementById('destination').value;
+            const errorMessage = document.getElementById('error-message');
+            const sourceContainer = document.querySelector('.select2-selection--single');
+            const destinationContainer = document.querySelectorAll('.select2-selection--single')[1];
+
+            // Reset previous error states
+            errorMessage.style.display = 'none';
+            sourceContainer.classList.remove('error-highlight');
+            destinationContainer.classList.remove('error-highlight');
+
+            // Check if source and destination are the same
+            if (source === destination && source !== '') {
+                errorMessage.style.display = 'flex';
+                sourceContainer.classList.add('error-highlight');
+                destinationContainer.classList.add('error-highlight');
+                
+                // Smooth scroll to error message
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
+        // Add real-time validation
+        $(document).ready(function() {
+            $('#source, #destination').on('change', function() {
+                const source = $('#source').val();
+                const destination = $('#destination').val();
+                const errorMessage = document.getElementById('error-message');
+                const sourceContainer = document.querySelector('.select2-selection--single');
+                const destinationContainer = document.querySelectorAll('.select2-selection--single')[1];
+
+                if (source === destination && source !== '') {
+                    errorMessage.style.display = 'flex';
+                    sourceContainer.classList.add('error-highlight');
+                    destinationContainer.classList.add('error-highlight');
+                } else {
+                    errorMessage.style.display = 'none';
+                    sourceContainer.classList.remove('error-highlight');
+                    destinationContainer.classList.remove('error-highlight');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,132 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/route.css') }}">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UrbanFlow - Smart Route Planning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 20px;
-            align-items: center;
-        }
-
-        header ul a {
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        header ul a:hover {
-            background-color: rgba(209, 199, 199, 0.815);
-        }
+      :root {
+        --gradient-start: #2193b0;
+        --gradient-end: #6dd5ed;
+        --shadow-color: #2149c2;
+        --text-color: #333;
+        --card-bg: rgba(255, 255, 255, 0.9);
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+      
+      .header {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+      }
+      
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo h1 {
+        color: white;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        margin: 0 0.5rem;
+      }
+      
+      .nav-link:hover, .nav-link.active {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      
+      .main-content {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+      
+      .route-planner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      
+      .card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 
+            20px 20px 60px rgba(0, 0, 0, 0.1),
+            -20px -20px 60px rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+      }
+      
+      .card-title {
+        color: var(--gradient-start);
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      
+      .input-group {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+      
+      .input-group input {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 
+            inset 8px 8px 16px rgba(0, 0, 0, 0.1),
+            inset -8px -8px 16px rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .input-group input:focus {
+        outline: none;
+        box-shadow: 
+            inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+            inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+      }
+      
+      .input-group label {
+        position: absolute;
+        left: 1rem;
+        top: -0.5rem;
+        background: var(--card-bg);
+        padding: 0 0.5rem;
+        font-size: 0.9rem;
+        color: var(--gradient-start);
+      }
+      
+      .input-icon {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+      }
+      
+      .submit-btn {
+        width: auto;
+        min-width: 180px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+        color: white;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 
+            4px 4px 8px rgba(0, 0, 0, 0.1),
+            -4px -4px 8px rgba(255, 255, 255, 0.1);
+      }
+      
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            6px 6px 12px rgba(0, 0, 0, 0.15),
+            -6px -6px 12px rgba(255, 255, 255, 0.15);
+      }
+      
+      .btn-icon {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+      }
+      
+      .route-step {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 
+            4px 4px 8px rgba(0, 0, 0, 0.05),
+            -4px -4px 8px rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease;
+      }
+      
+      .route-step:hover {
+        transform: translateX(5px);
+      }
+      
+      .transport-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 1rem;
+        padding: 8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .transport-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .step-content {
+        flex: 1;
+      }
+      
+      .step-title {
+        font-weight: 600;
+        color: var(--gradient-start);
+        margin-bottom: 0.2rem;
+      }
+      
+      .step-details {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+      
+      .step-duration {
+        background: rgba(33, 73, 194, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        color: var(--gradient-start);
+        margin-left: auto;
+      }
+      
+      .empty-state {
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-color);
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-    <header>
-        <h1>Urbanflow</h1>
-        <nav>
-            <ul>
-                <a href="{{ url_for('home') }}">Home</a>
-                <a href="{{ url_for('route') }}">Routes</a>
-                <a href="{{ url_for('login') }}">Log In</a>
-            </ul>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a href="/" class="logo"><h1>UrbanFlow</h1></a>
+        <nav class="nav">
+          <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+          <a href="{{ url_for('route') }}" class="nav-link active">Routes</a>
+          <a href="{{ url_for('login') }}" class="nav-link">Log In</a>
         </nav>
+      </div>
     </header>
-    <main>
-        <div class="left">
-            <div class="route">
-                <div class="login-box">
-                    <form action="/search" method="post" id="search-form">
-                        <div class="user-box">
-                            <input type="text" id="start" name="start" required>
-                            <label>Enter Start</label>
-                        </div>
-                        <div class="user-box">
-                            <input type="text" id="destination" name="destination" required>
-                            <label>Enter Destination</label>
-                        </div>
-                        <button type="submit">Search</button>
-                    </form>
+
+    <main class="main-content">
+      <div class="route-planner">
+        <div class="route-form-container">
+          <div class="card">
+            <h2 class="card-title">Plan Your Journey</h2>
+            <form action="/search" method="post" id="search-form" class="route-form">
+              <div class="input-group">
+                <input type="text" id="start" name="start" required />
+                <label for="start">Starting Point</label>
+                <span class="input-icon">📍</span>
+              </div>
+              <div class="input-group">
+                <input type="text" id="destination" name="destination" required />
+                <label for="destination">Destination</label>
+                <span class="input-icon">🎯</span>
+              </div>
+              <button type="submit" class="submit-btn">
+                Find Route
+                <svg class="btn-icon" viewBox="0 0 24 24">
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="route-results">
+          <div class="card">
+            <h2 class="card-title">Route Details</h2>
+            <div class="route-content">
+              {% if output %}
+                {% for line in output %}
+                  <div class="route-step">
+                    <div class="transport-icon">
+                      {% if 'uber' in line.lower() %}
+                        <img src="{{ url_for('static', filename='images/uber-logo.png') }}" alt="Uber">
+                      {% elif 'ola' in line.lower() %}
+                        <img src="{{ url_for('static', filename='images/ola-logo.png') }}" alt="Ola">
+                      {% elif 'bus' in line.lower() %}
+                        <img src="{{ url_for('static', filename='images/bus-icon.png') }}" alt="Bus">
+                      {% elif 'train' in line.lower() %}
+                        <img src="{{ url_for('static', filename='images/train-icon.png') }}" alt="Train">
+                      {% elif 'walk' in line.lower() %}
+                        <img src="{{ url_for('static', filename='images/walk-icon.png') }}" alt="Walking">
+                      {% else %}
+                        <img src="{{ url_for('static', filename='images/transport-icon.png') }}" alt="Transport">
+                      {% endif %}
+                    </div>
+                    <div class="step-content">
+                      <div class="step-title">Step {{ loop.index }}</div>
+                      <div class="step-details">{{ line }}</div>
+                    </div>
+                    <div class="step-duration">
+                      {% if 'min' in line %}
+                        {{ line.split('min')[0] ~ ' min' }}
+                      {% else %}
+                        ~15 min
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="empty-state">
+                  <img src="{{ url_for('static', filename='images/route-empty.png') }}" alt="Enter route details" 
+                       style="width: 120px; margin-bottom: 1rem;">
+                  <p>Enter your journey details to see the route</p>
                 </div>
+              {% endif %}
             </div>
+          </div>
         </div>
-        <div class="right">
-            <h1>Route Details</h1>
-            {% if output %}
-            {% for line in output %}
-            <p>{{ line }}</p>
-            {% endfor %}
-            {% else %}
-            <p>No details available.</p>
-            {% endif %}
-        </div>
+      </div>
     </main>
-    <div class="chatbot">
-        <button id="chatbot-start">CHATBOT START</button>
-    </div>
-    <style>
-        #chatbot-start {
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 20px;
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: blue;
-            box-shadow: 0px 0px 5px white;
-            color: white;
-            border: 0px solid;
-        }
-
-        #chatbot-start:hover {
-            transform: scale(1.05);
-        }
-    </style>
-    <script>
-        const startButton = document.getElementById('chatbot-start');
-
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRecognition();
-
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
-        recognition.lang = 'en-US';
-
-        let currentStep = 'start';
-
-        function askUser(query) {
-            const utterance = new SpeechSynthesisUtterance(query);
-            window.speechSynthesis.speak(utterance);
-        }
-
-        function handleSpeechRecognitionResult(event) {
-            const transcript = event.results[0][0].transcript.toLowerCase();
-            if (currentStep === 'start') {
-                document.getElementById('start').value = transcript;
-                askUser('Please provide your destination.');
-                currentStep = 'destination';
-                recognition.start();
-            } else if (currentStep === 'destination') {
-                document.getElementById('destination').value = transcript;
-                document.getElementById('search-form').submit();
-            }
-        }
-
-        startButton.addEventListener('click', () => {
-            askUser('Please provide your starting point.');
-            recognition.start();
-        });
-
-        recognition.addEventListener('result', handleSpeechRecognitionResult);
-    </script>
-
-</body>
-
+  </body>
 </html>

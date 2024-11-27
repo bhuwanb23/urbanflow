@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .route-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .path-info {
+            background: rgba(0, 180, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .journey-step {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .step-header {
+            color: #00b4db;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .time-details {
+            display: grid;
+            gap: 15px;
+        }
+
+        .time-block {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .time-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 180, 219, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #00b4db;
+        }
+
+        .time-info {
+            flex: 1;
+        }
+
+        .time-label {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 5px;
+        }
+
+        .time-value {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .alternatives {
+            background: rgba(255, 165, 0, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .alt-title {
+            color: orange;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alt-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .error {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: #ff3333;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .route-container {
+                padding: 20px;
+            }
+        }
+
+        .arrival-estimate {
+            margin-top: 20px;
+            background: rgba(0, 180, 219, 0.1);
+        }
+
+        .alternatives .time-block {
+            margin-top: 15px;
+        }
+
+        .alt-option {
+            margin: 10px 0;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alt-option i {
+            color: #00b4db;
+            width: 24px;
+            text-align: center;
+        }
+
+        .bus-info {
+            background: rgba(0, 180, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .bus-number {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #00b4db;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .bus-number i {
+            background: rgba(0, 180, 219, 0.2);
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.2em;
+        }
+
+        .bus-info:hover {
+            background: rgba(0, 180, 219, 0.15);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <div class="error">
+                <i class="fas fa-exclamation-circle"></i>
+                {{ error }}
+                <br><br>
+                <a href="{{ url_for('index') }}" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Try Again
+                </a>
+            </div>
+        {% else %}
+            <div class="header">
+                <h1>Journey Details</h1>
+                <p>From {{ source }} to {{ destination }}</p>
+            </div>
+
+            <div class="route-container">
+                {% for line in output %}
+                    {% if line.startswith('Path:') %}
+                        <div class="path-info">
+                            <i class="fas fa-route"></i> {{ line }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                {% for line in output %}
+                    {% if line.startswith('From') %}
+                        <div class="journey-step">
+                            <div class="step-header">
+                                <i class="fas fa-map-marker-alt"></i>
+                                {{ line.split(':')[0] }}
+                            </div>
+                            
+                            {% if 'No direct bus available' in line %}
+                                <div class="alternatives">
+                                    <div class="time-details">
+                                        <div class="time-block">
+                                            <div class="time-icon">
+                                                <i class="far fa-clock"></i>
+                                            </div>
+                                            <div class="time-info">
+                                                <div class="time-label">Current Time</div>
+                                                <div class="time-value">
+                                                    {{ line.split('Current time:')[1].split('No')[0].strip() }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="alt-title">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Alternative Transportation Options
+                                    </div>
+                                    <div class="alt-option">
+                                        <i class="fas fa-walking"></i>
+                                        <span>Walking (15-20 minutes)</span>
+                                    </div>
+                                    <div class="alt-option">
+                                        <i class="fas fa-car"></i>
+                                        <span>Uber/Ola (5-7 minutes)</span>
+                                    </div>
+                                    <div class="alt-option">
+                                        <i class="fas fa-bicycle"></i>
+                                        <span>Bike Rental (10-12 minutes)</span>
+                                    </div>
+
+                                    <div class="time-block arrival-estimate">
+                                        <div class="time-icon">
+                                            <i class="fas fa-flag-checkered"></i>
+                                        </div>
+                                        <div class="time-info">
+                                            <div class="time-label">Expected Arrival</div>
+                                            <div class="time-value">
+                                                {{ line.split('Expected arrival at')[1].split('----')[0].strip() }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="bus-info">
+                                    <div class="bus-number">
+                                        <i class="fas fa-bus"></i>
+                                        <span>Bus {{ line.split('Bus')[1].split('from')[0].strip() }}</span>
+                                    </div>
+                                </div>
+
+                                <div class="time-details">
+                                    <div class="time-block">
+                                        <div class="time-icon">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <div class="time-info">
+                                            <div class="time-label">Current Time</div>
+                                            <div class="time-value">
+                                                {{ line.split('Current time:')[1].split('Next')[0].strip() }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="time-block">
+                                        <div class="time-icon">
+                                            <i class="fas fa-bus"></i>
+                                        </div>
+                                        <div class="time-info">
+                                            <div class="time-label">Next Bus</div>
+                                            <div class="time-value">
+                                                {{ line.split('Next bus at:')[1].split('Waiting')[0].strip() }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="time-block">
+                                        <div class="time-icon">
+                                            <i class="fas fa-hourglass-half"></i>
+                                        </div>
+                                        <div class="time-info">
+                                            <div class="time-label">Waiting Time</div>
+                                            <div class="time-value">
+                                                {{ line.split('Waiting time:')[1].split('Travel')[0].strip() }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="time-block">
+                                        <div class="time-icon">
+                                            <i class="fas fa-route"></i>
+                                        </div>
+                                        <div class="time-info">
+                                            <div class="time-label">Travel Time</div>
+                                            <div class="time-value">
+                                                {{ line.split('Travel time:')[1].split('Arrival')[0].strip() }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="time-block">
+                                        <div class="time-icon">
+                                            <i class="fas fa-flag-checkered"></i>
+                                        </div>
+                                        <div class="time-info">
+                                            <div class="time-label">Expected Arrival</div>
+                                            <div class="time-value">
+                                                {{ line.split('Arrival time at')[1].split('----')[0].strip() }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <a href="{{ url_for('index') }}" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Search New Route
+            </a>
+        {% endif %}
+    </div>
+</body>
+</html>
